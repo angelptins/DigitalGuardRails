@@ -23,6 +23,8 @@ The following code opens an interactive session from the current working directo
 
 Sample input, output, and animation files from the DGR pipeline are available in this repository.
 
+---
+
 ### Python Script
 
 Run the following code as an executable Python script with the flags.
