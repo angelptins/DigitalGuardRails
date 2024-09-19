@@ -27,10 +27,10 @@ Sample input, output, and animation files from the DGR pipeline are available in
 
 Run the following code as an executable Python script with the flags.
 
-	    python DigitalGuardRails.py \
-	    --fname-excel ./test_input.xlsx \
-	    --fname-csv ./test_output.csv \
-	    --fname-ani test_animation.mp4
+	python DigitalGuardRails.py \
+	--fname-excel ./test_input.xlsx \
+	--fname-csv ./test_output.csv \
+	--fname-ani test_animation.mp4
 
 More information on how to use the script can be seen by running:
 
