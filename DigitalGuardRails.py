@@ -235,45 +235,37 @@ def main():
     '''
 
     parser = argparse.ArgumentParser(description='Run the AE Digital Guard Rails pipeline; live version to come.')
-
     parser.add_argument('--fname-excel', type=str, required=True, help='Path to raw .xslx data from TekScan software.')
     parser.add_argument('--fname-csv', type=str, required=True, help='Path to processed CSV data.')
     parser.add_argument('--force-process', type=bool, required=False, default=False, help='Whether to process Excel to CSV.')
-
     parser.add_argument('--dangerzone-width', type=int, required=False, default=5, help='Dangerzone width from edge of mat.')
     parser.add_argument('--artificial-shift', type=bool, required=False, default=False, help='Whether to apply artificial shift or not.')
     parser.add_argument('--shift-frequency', type=int, required=False, default=10, help='How often to apply artificial shift (if enabled).')
-    
     parser.add_argument('--fps-in', type=int, required=False, default=30, help='Frame rate of TekScan data.')
     parser.add_argument('--fps-out', type=int, required=False, default=10, help='Frame rate of output MP4 animation.')
-
     parser.add_argument('--fname-ani', type=str, required=True, help='Path to output MP4 animation.')
-
     args = parser.parse_args()
     
-    #fname_excel = './test_input.xlsx'
-    #fname_csv = './test_output.csv'
-    #fname_ani = './test_animation.mp4'
-    #dangerzone_width = 5
-    #artificial_shift = True
-    #shift_frequency = 16
-    #fps_in = 30 # Acc. to default settings for TekScan recording software
-    #fps_out = 10 # Acc. to desired frame rate for output .mp4 (less fps_out means faster animation)
-
     fname_excel       = args.fname_excel
     fname_csv         = args.fname_csv
     force_process     = args.force_process
-
     dangerzone_width  = args.dangerzone_width
     artificial_shift  = args.artificial_shift
     shift_frequency   = args.shift_frequency
-    
     fps_in            = args.fps_in
     fps_out           = args.fps_out
-    
     fname_ani         = args.fname_ani
     
-
+    # # Uncomment to override CLI arguments.  
+    # fname_excel = './test_input.xlsx'
+    # fname_csv = './test_output.csv'
+    # fname_ani = './test_animation.mp4'
+    # dangerzone_width = 5
+    # artificial_shift = True
+    # shift_frequency = 16
+    # fps_in = 30 # Acc. to default settings for TekScan recording software
+    # fps_out = 10 # Acc. to desired frame rate for output .mp4 (less fps_out means faster animation)
+    
     df_data = process_excel_data(fname_excel=fname_excel, 
                                  fname_csv=fname_csv,
                                  force_process=False)
